@@ -853,7 +853,32 @@
     </footer>
 
     <script src="script.js"></script>
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+
+        if (navLinks.classList.contains("active")) {
+            menuToggle.textContent = "✕";
+            menuToggle.setAttribute("aria-label", "إغلاق القائمة");
+        } else {
+            menuToggle.textContent = "☰";
+            menuToggle.setAttribute("aria-label", "فتح القائمة");
+        }
+    });
+
+    // إغلاق القائمة عند الضغط على أي رابط
+    document.querySelectorAll("#navLinks a").forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+            menuToggle.textContent = "☰";
+            menuToggle.setAttribute("aria-label", "فتح القائمة");
+        });
+    });
+</script>
+</body>
 </body>
 
 </html>
