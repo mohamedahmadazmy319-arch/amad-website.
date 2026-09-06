@@ -49,31 +49,26 @@
 
     <!-- Header -->
     <header>
-    <nav class="navbar">
+        <nav class="navbar">
 
-        <a href="#home" class="logo">
-            AMAD
-        </a>
+            <a href="#home" class="logo">
+                AMAD
+            </a>
 
-        <!-- زر القائمة -->
-        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
-            ☰
-        </button>
+            <ul class="nav-links">
 
-        <ul class="nav-links" id="navLinks">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#project">المشروع</a></li>
+                <li><a href="#services">الأنشطة</a></li>
+                <li><a href="#why-us">لماذا AMAD؟</a></li>
+                <li><a href="#location">الموقع</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
 
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#about">من نحن</a></li>
-            <li><a href="#project">المشروع</a></li>
-            <li><a href="#services">الأنشطة</a></li>
-            <li><a href="#why-us">لماذا AMAD؟</a></li>
-            <li><a href="#location">الموقع</a></li>
-            <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
 
-        </ul>
-
-    </nav>
-</header>
+        </nav>
+    </header>
 
     <!-- Hero -->
     <section class="hero" id="home">
@@ -853,32 +848,7 @@
     </footer>
 
     <script src="script.js"></script>
-<script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
 
-    menuToggle.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-
-        if (navLinks.classList.contains("active")) {
-            menuToggle.textContent = "✕";
-            menuToggle.setAttribute("aria-label", "إغلاق القائمة");
-        } else {
-            menuToggle.textContent = "☰";
-            menuToggle.setAttribute("aria-label", "فتح القائمة");
-        }
-    });
-
-    // إغلاق القائمة عند الضغط على أي رابط
-    document.querySelectorAll("#navLinks a").forEach(link => {
-        link.addEventListener("click", function () {
-            navLinks.classList.remove("active");
-            menuToggle.textContent = "☰";
-            menuToggle.setAttribute("aria-label", "فتح القائمة");
-        });
-    });
-</script>
-</body>
 </body>
 
 </html>
