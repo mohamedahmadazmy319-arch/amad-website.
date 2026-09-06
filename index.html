@@ -17,7 +17,28 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+
+        if (navLinks.classList.contains("active")) {
+            menuToggle.textContent = "✕";
+        } else {
+            menuToggle.textContent = "☰";
+        }
+    });
+
+    // إغلاق القائمة بعد الضغط على أي رابط
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+            menuToggle.textContent = "☰";
+        });
+    });
+</script>
 <body>
 
     <!-- زر الاتصال -->
@@ -28,26 +49,31 @@
 
     <!-- Header -->
     <header>
-        <nav class="navbar">
+    <nav class="navbar">
 
-            <a href="#home" class="logo">
-                AMAD
-            </a>
+        <a href="#home" class="logo">
+            AMAD
+        </a>
 
-            <ul class="nav-links">
+        <!-- زر القائمة -->
+        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+            ☰
+        </button>
 
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#about">من نحن</a></li>
-                <li><a href="#project">المشروع</a></li>
-                <li><a href="#services">الأنشطة</a></li>
-                <li><a href="#why-us">لماذا AMAD؟</a></li>
-                <li><a href="#location">الموقع</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
+        <ul class="nav-links" id="navLinks">
 
-            </ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#project">المشروع</a></li>
+            <li><a href="#services">الأنشطة</a></li>
+            <li><a href="#why-us">لماذا AMAD؟</a></li>
+            <li><a href="#location">الموقع</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
 
-        </nav>
-    </header>
+        </ul>
+
+    </nav>
+</header>
 
     <!-- Hero -->
     <section class="hero" id="home">
